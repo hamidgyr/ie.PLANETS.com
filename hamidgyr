@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой сайт — Планеты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0d17;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        input, button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #e60023; /* Цвет Pinterest */
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #ad001a;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать!</h1>
+    <p>Введите слово или нажмите кнопку, чтобы перейти в Pinterest о планетах:</p>
+
+    <input type="text" id="userInput" placeholder="Напишите 'From' или любое слово...">
+    <button onclick="checkAndRedirect()">Перейти в Pinterest</button>
+
+    <script>
+        function checkAndRedirect() {
+            // Ссылка на ваш Pinterest (замените на свою!)
+            const pinterestUrl = "https://www.pinterest.com/ВАШ_ПРОФИЛЬ/планеты/";
+            
+            const text = document.getElementById("userInput").value.trim().toLowerCase();
+
+            // Если написано 'from' или просто нажата кнопка с текстом
+            if (text === "from" || text !== "") {
+                window.location.href = pinterestUrl;
+            } else {
+                alert("Пожалуйста, напишите что-нибудь в поле!");
+            }
+        }
+    </script>
+
+</body>
+</html>
